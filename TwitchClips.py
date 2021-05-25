@@ -10,7 +10,7 @@ import urllib.request
 import os
 import time
 
-ClientID = "hvbypaumhng8r11j0l20qooi8b2mmy"
+ClientID = ""
 NumberOfClips = 6
 urls = []
 titles = []
