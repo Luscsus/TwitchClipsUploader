@@ -1,0 +1,9 @@
+{
+"name": "Twitch Clips Uploader",
+  "description": "This script uploads the most popular scripts to youtube",
+  "keywords": [
+    "Python",
+    "Twitch"
+  ],
+  "repository": "https://github.com/Luscsus/TwitchClipsUploader"
+}
