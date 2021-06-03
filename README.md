@@ -11,9 +11,10 @@ The script first uses the twitch api to find the 6 most popular clips of the pre
 # How to use:
 1. First fork this repository.
 2. Follow the guide here: https://support.google.com/cloud/answer/6158849?hl=en#zippy=%2Cuser-consent%2Cpublic-and-internal-applications%2Cauthorized-domains. And download the client secret key to your forked repository.
-3. Open the TwitchClipsUploader.py script and set the variable ClientID to your client ID.
-4. Complete the youtube audit form here: https://support.google.com/youtube/contact/yt_api_form?hl=en (If you don't do this your videos will be set to private)
-5. Deploy to heroku:
+3. Create a twitch aplication here: https://dev.twitch.tv/console/apps. Set the name, set the Oauth Redirect URL to https://localhost, set the category to Analytics tool.
+4. Open the TwitchClipsUploader.py script and set the variable ClientID to your Twitch application client ID.
+5. Complete the youtube audit form here: https://support.google.com/youtube/contact/yt_api_form?hl=en (If you don't do this your videos will be set to private)
+6. Deploy to heroku:
 <a href="https://heroku.com/deploy?template=https://github.com/Luscsus/TwitchClipsUploader">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
