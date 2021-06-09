@@ -8,6 +8,7 @@ from simple_youtube_api.LocalVideo import LocalVideo
 import urllib.request
 import os
 import time
+from datetime import datetime
 
 ClientID = "" # Put your youtube API ClientID here.
 NumberOfClips = 6 # change the number if you have more youtube api qouta. Leave 6 if normal qouta amount.
@@ -74,7 +75,7 @@ def UploadVideo(CurrentVideoNumber):
     channel = Channel()
     channel.login("client_secret.json", "credentials.storage")
     # setting up the video that is going to be uploaded
-    video = LocalVideo(file_path= str(CurrentVideo) + ".mp4")
+    video = LocalVideo(file_path= str(CurrentVideoNumber) + ".mp4")
 
     # setting snippet
     video.set_title(titles[CurrentVideoNumber])
@@ -90,30 +91,34 @@ def UploadVideo(CurrentVideoNumber):
     video.set_public_stats_viewable(True)
 
     # uploading video and printing the results
-    CurrentVideo += 1
     video = channel.upload_video(video)
     print(video.id)
     print(video)
 
-# First get the clips and store them in a list
-GetClip()
-
-# Convert the videos to mp4
-ConvertVideoToMp4()
-
-# Download the videos to the working directory
-SaveVideo()
-
-# Upload video every 4 hours
-for x in range(NumberOfClips):
-    try:
-        print(CurrentVideo)
-        UploadVideo(CurrentVideo)
-    except: 
-        print("The youtube api qouta has been exceded")
-    time.sleep((24 / NumberOfClips) * 60 * 60)
-
-CurrentVideo = 0
-
-# Delete the videos from your working directory
-RemoveVideo()
+now = datetime.now() 
+current_time = now.strftime("%H:%M:%S")
+start = '12:00:00'
+end = '13:00:00'
+Done = False
+while True: 
+    if current_time > start and current_time < end and Done == False: # Check if the current time is within the starting time and ending time
+        # First get the clips and store them in a list
+        GetClip()
+        # Convert the videos to mp4
+        ConvertVideoToMp4()
+        # Download the videos to the working directory
+        SaveVideo()
+        # Upload videos
+        for x in range(NumberOfClips):
+            try:
+                UploadVideo(CurrentVideo)
+            except: 
+                print("There has been a problem with the video upload")
+            CurrentVideo =+ 1
+            time.sleep(60)
+        CurrentVideo = 0
+        # Delete the videos from your working directory
+        RemoveVideo()
+        Done = True
+    elif current_time < start or current_time > end:
+        Done = False
