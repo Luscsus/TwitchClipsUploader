@@ -1,0 +1,5 @@
+requests
+simple_youtube_api
+youtube_dl
+gunicorn
+datetime
