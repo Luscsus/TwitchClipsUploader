@@ -1,1 +1,1 @@
-web: gunicorn TwitchClipsUploader.py
+web: gunicorn TwitchClipsUploader.py -t 0
