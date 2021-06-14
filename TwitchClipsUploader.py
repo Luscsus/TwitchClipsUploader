@@ -79,7 +79,7 @@ def UploadVideo(CurrentVideoNumber):
 
     # setting snippet
     video.set_title(titles[CurrentVideoNumber])
-    video.set_description("Original clip: " + urls[CurrentVideoNumber] + ", \nClip uploader: " + channelUrls[CurrentVideoNumber] + ", This channel brings you the most popular twitch clips every 4 hours. \nYou can read more about how this works here: https://github.com/Luscsus/TwitchClipsUploader")
+    video.set_description("Original clip: " + urls[CurrentVideoNumber] + ", \nClip uploader: " + channelUrls[CurrentVideoNumber] + ", This channel brings you the most popular twitch clips every day. \nYou can read more about how this works here: https://github.com/Luscsus/TwitchClipsUploader")
     video.set_tags(["Twitch", "Clip", "Streamer"])
     video.set_category(24) # You can find what category numbers mean what here: https://techpostplus.com/youtube-video-categories-list-faqs-and-solutions/
     video.set_default_language("en-US")
@@ -92,8 +92,6 @@ def UploadVideo(CurrentVideoNumber):
 
     # uploading video and printing the results
     video = channel.upload_video(video)
-    print(video.id)
-    print(video)
 
 now = datetime.now() 
 current_time = now.strftime("%H:%M:%S")
@@ -114,8 +112,7 @@ while True:
                 UploadVideo(CurrentVideo)
             except: 
                 print("There has been a problem with the video upload")
-            CurrentVideo =+ 1
-            time.sleep(60)
+            CurrentVideo = CurrentVideo + 1
         CurrentVideo = 0
         # Delete the videos from your working directory
         RemoveVideo()
