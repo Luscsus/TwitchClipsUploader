@@ -1,6 +1,6 @@
 {
 "name": "Twitch Clips Uploader",
- "description": "This script uploads the most popular scripts to youtube",
+ "description": "This script uploads the most popular twitch clips to youtube",
  "keywords": [
     "Python",
     "Twitch"
