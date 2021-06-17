@@ -13,8 +13,8 @@ The script first uses the twitch api to find the 6 most popular clips of the pre
 6. Create a twitch aplication here: https://dev.twitch.tv/console/apps. Set the name, set the Oauth Redirect URL to https://localhost, set the category to Analytics tool.
 7. Open the TwitchClipsUploader.py script and set the variable ClientID to your Twitch application client ID.
 8. Complete the youtube audit form here: https://support.google.com/youtube/contact/yt_api_form?hl=en (If you don't do this your videos will be set to private)
-9. Deploy to heroku:
-<a href="https://heroku.com/deploy?template=https://github.com/Luscsus/TwitchClipsUploader">
+9. Deploy to heroku (First change this: "https://github.com/Luscsus/TwitchClipsUploader" in your Readme to your own repository url):
+<a href="https://heroku.com/deploy?template=https://github.com/Luscsus/TwitchClipsUploader"> 
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a><br/>
 10. Go to https://cron-job.org/en/, signup and create a new cronjob. Set it to run every day at 12:00 UTC. And as the url set your heroku applications url.<br/>
