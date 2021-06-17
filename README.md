@@ -23,4 +23,4 @@ Notes:
 If you have any questions or problems, you can contact me and I will be happy to help.
 <br/>
 
-Licensed under the MIT License
+Licensed under the [MIT License](LICENSE)
