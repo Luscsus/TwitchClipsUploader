@@ -63,13 +63,6 @@ def SaveVideo():
         print("Downloading video number " + str(x))
         urllib.request.urlretrieve(FinalUrls[x], str(x) + ".mp4") 
 
-# Remove the videos from your working directory:
-def RemoveVideo():
-    for x in range(NumberOfClips):
-        print("Deleting video number " + str(x))
-        os.remove(str(x) + ".mp4")
-
-
 def UploadVideo(CurrentVideoNumber): 
     # loggin into the channel
     channel = Channel()
@@ -114,8 +107,6 @@ while True:
                 print("There has been a problem with the video upload")
             CurrentVideo = CurrentVideo + 1
         CurrentVideo = 0
-        # Delete the videos from your working directory
-        RemoveVideo()
         Done = True
     elif current_time < start or current_time > end:
         Done = False
