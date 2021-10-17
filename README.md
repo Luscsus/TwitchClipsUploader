@@ -5,7 +5,15 @@ At first I wanted to upload 10 clips from the 10 top categories of the day, but 
 # Update:
 I've decided to change the category of the clips that are uploaded, instead of finding the 6 most popular clips of all categories, i set it to the ASMR category for the next month to see what diference in views that will make. As I think people will be more likely to click on this sort of content.
 
-So it's been 1 month since the change in category, so it's time to change it back to getting clips from all categories. I'll be posting the statistical difference from the change in category this week.
+So it's been 1 month since the change in category, so it's time to change it back to getting clips from all categories. Here are the graphs that show the statistical difference (The category was changed on the 17th of september):
+First, here's a graph that shows the amount of times videos were shown:
+![Screenshot](GraphShowedVideos.PNG)
+Here's a graph that shows the increase of subscribers:
+![Screenshot](GraphSubs.PNG)
+And lastly here's a graph showing the considerable increase in watch time:
+![Screenshot](GraphWatchTime.PNG)
+
+As you can see the difference the change in categories made is quite considerable. It really shows that people are into some weird shit. Even though the increase in activity is good for the channel, I will still revert back to the usual content as the content of the videos this past month have been really fucking weird.
 # How it works:
 The script first uses the twitch api to find the 6 most popular clips of the previous day. Takes the clips url, title and the channels url. Then it uses https://github.com/ytdl-org/youtube-dl to convert the clips url to an mp4 url and sets the videos description, title, tags and so on. After that we can upload it to youtube with https://github.com/jonnekaunisto/simple-youtube-api. The script is hosted on https://www.heroku.com and is pinged using https://cron-job.org/en/ every day at 12AM, the code uploads 6 clips to youtube then goes back to sleep to preserve Heroku dyno usage. If I had a verified Heroku account I wouldn't need to use cron jobs, as I could use the free Heroku Scheduler.
 # How to use:
